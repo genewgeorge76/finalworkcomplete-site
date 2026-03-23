@@ -5,13 +5,11 @@ describe('empty spec', () => {
 
   it('displays the resources text', () => {
     cy.get('h2')
-    .contains('This is a bare-bones Angular project that has everything you need to quickly deploy it to Netlify');
+    .contains('Built on Four Generations of Family Craftsmanship');
   })
-  it('renders the image', () => {
-    cy.get('img')
+  it('renders the logo', () => {
+    cy.get('.logo')
     .should('be.visible')
-    .and(($img) => {
-      expect($img[0].naturalWidth).to.be.greaterThan(0);
-    })
+    .contains('J. Worden');
   })
 })
