@@ -1,28 +1,291 @@
-<svg id="background" width='1728' height='1235' viewBox="0 0 1728 1235" fill='none' xmlns='http://www.w3.org/2000/svg'><g opacity='0.75' filter='url(#filter0_f_39_143)'><circle cy='1000' r='264' fill='url(#paint0_linear_39_143)'/></g><g opacity='0.65' filter='url(#filter1_f_39_143)'><circle cx='1720' cy='264' r='379' fill='url(#paint1_linear_39_143)'/></g><defs><filter id='filter0_f_39_143' x='-485' y='515' width='970' height='970' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'><feFlood flood-opacity='0' result='BackgroundImageFix'/><feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/><feGaussianBlur stdDeviation='110.5' result='effect1_foregroundBlur_39_143'/></filter><filter id='filter1_f_39_143' x='1120' y='-336' width='1200' height='1200' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'><feFlood flood-opacity='0' result='BackgroundImageFix'/><feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/><feGaussianBlur stdDeviation='110.5' result='effect1_foregroundBlur_39_143'/></filter><linearGradient id='paint0_linear_39_143' x1='196.5' y1='902' x2='-2.55853e-05' y2='1264' gradientUnits='userSpaceOnUse'><stop stop-color="var(--bttm-left-blur-1)"/><stop offset='1' stop-color="var(--bttm-left-blur-2)"/></linearGradient><linearGradient id='paint1_linear_39_143' x1='1720' y1='-115' x2='1720' y2='643' gradientUnits='userSpaceOnUse'><stop stop-color="var(--top-right-blur-1)"/><stop offset='1' stop-color="var(--top-right-blur-2)" /></linearGradient></defs></svg>     
-<div id="content">
-  <div class="header">
-    <h1>Quickstart Template</h1>
-    <div class="logo">
-      <img src="https://user-images.githubusercontent.com/43764894/223549637-2715c89d-a44e-42e0-8f6c-fa6246279658.png">
-    </div>
-    <h2>
-      This is a bare-bones Angular project that has everything you need to quickly deploy it to Netlify
-    </h2>
-    <div class="bttns">
-      <a href="https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/angular-quickstart" class="bttn primary">Deploy to Netlify</a>
-      <a href="https://github.com/netlify-templates/angular-quickstart" class="bttn secondary">View Repo</a>
-    </div>
-  </div>
-  <div class="resource-list">
+<!-- ── HEADER / NAV ─────────────────────────────────────────── -->
+<header class="site-header" [class.nav-open]="navOpen" id="site-header">
+  <div class="logo">⬛ J. Worden &amp; Sons</div>
+  <button class="hamburger" (click)="toggleNav()" [attr.aria-expanded]="navOpen" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="main-nav" aria-label="Main navigation">
     <ul>
-      <li>
-        <a href="https://www.netlify.com/tags/angular/">Netlify Blog: Angular posts</a>
-      <li>
-        <a href="https://docs.netlify.com/">Netlify Docs</a>
-      </li>
-      <li>
-        <a href="https://angular.io/">Angular Docs</a>
-      </li>
+      <li><a href="#home" (click)="closeNav()">Home</a></li>
+      <li><a href="#about" (click)="closeNav()">About</a></li>
+      <li><a href="#services" (click)="closeNav()">Services</a></li>
+      <li><a href="#portfolio" (click)="closeNav()">Portfolio</a></li>
+      <li><a href="#contact" (click)="closeNav()" class="nav-cta">Get an Estimate</a></li>
     </ul>
-  </div>
+  </nav>
+</header>
+
+<!-- ── DISCLAIMER BANNER ────────────────────────────────────── -->
+<div class="disclaimer-banner" role="note">
+  <span aria-hidden="true">⚠</span>&nbsp; We are J. Worden &amp; Sons Asphalt Paving — the original, 4th-generation family business.
+  <strong>Independent from all other Worden-named paving entities in Chester, VA.</strong>
 </div>
+
+<!-- ── HERO ─────────────────────────────────────────────────── -->
+<section class="hero" id="home" aria-labelledby="hero-heading">
+  <div class="hero-badge">4th-Generation &bull; Since 1984 &bull; Chester, Virginia</div>
+  <h1 id="hero-heading">Virginia's Premier<br><span class="gold">Asphalt Paving Legacy</span></h1>
+  <p class="hero-sub">
+    Four generations of uncompromising craftsmanship. Trusted by Fortune-brand restaurant chains.
+    Serving 41 cities across Virginia with a structural standard that outlasts the competition.
+  </p>
+  <div class="hero-cta">
+    <a href="#contact" class="btn btn-primary">Get a Free Estimate</a>
+    <a href="#about" class="btn btn-outline">Our Story</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">1984</span><span>Year Founded</span></div>
+    <div class="stat"><span class="stat-num">4th</span><span>Generation Family Business</span></div>
+    <div class="stat"><span class="stat-num">41</span><span>Virginia Cities Served</span></div>
+    <div class="stat"><span class="stat-num">4×</span><span>Best of Houzz Award</span></div>
+    <div class="stat"><span class="stat-num">3</span><span>National Brand Partners</span></div>
+  </div>
+</section>
+
+<!-- ── ABOUT / LEGACY ─────────────────────────────────────────── -->
+<section id="about" class="section" aria-labelledby="about-heading">
+  <div class="container">
+    <span class="section-tag">Our Story</span>
+    <h2 class="section-title" id="about-heading">Built on Four Generations of Family Craftsmanship</h2>
+    <p class="section-lead">
+      J. Worden &amp; Sons Asphalt Paving was founded in 1984 with a single commitment: deliver paving
+      that holds up for decades, not just seasons. What began as a local Chester, Virginia operation has
+      grown into a multi-state commercial force — without ever sacrificing the family values that started it all.
+    </p>
+    <p class="section-note">
+      <em>Note: We are the original J. Worden family business and are entirely independent from any other
+      Worden-named paving operations that may exist in Chester or the surrounding region.</em>
+    </p>
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let item of timeline">
+        <span class="timeline-year">{{ item.year }}</span>
+        <p class="timeline-event">{{ item.event }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ──────────────────────────────────────────────── -->
+<section id="services" class="section section-dark" aria-labelledby="services-heading">
+  <div class="container">
+    <span class="section-tag">What We Do</span>
+    <h2 class="section-title" id="services-heading">Full-Spectrum Paving Services</h2>
+    <div class="services-grid">
+      <article class="service-card" *ngFor="let svc of services">
+        <div class="service-icon">{{ svc.icon }}</div>
+        <h3>{{ svc.title }}</h3>
+        <p>{{ svc.description }}</p>
+      </article>
+    </div>
+
+    <!-- Commercial Trust -->
+    <div class="commercial-trust">
+      <span class="section-tag">Commercial Trust</span>
+      <h3>Vetted by National Brands</h3>
+      <p>
+        When national restaurant chains expand or renovate locations, they turn to contractors who can deliver
+        consistent, standards-compliant results across multiple states. J. Worden &amp; Sons has earned and
+        maintained multi-state commercial paving contracts with three of the most quality-conscious brands in
+        the quick-service restaurant industry.
+      </p>
+      <div class="brand-logos">
+        <span class="brand">🍗 KFC</span>
+        <span class="brand">🥩 Arby's</span>
+        <span class="brand">🌮 Taco Bell</span>
+      </div>
+      <p class="brand-note">Multi-state contracts &bull; Brand-standard compliance &bull; On-time, on-budget delivery</p>
+    </div>
+
+    <!-- Structural Standard -->
+    <div class="structural-standard">
+      <span class="section-tag">Structural Standard</span>
+      <h3>The 6-Inch Compacted Stone Difference</h3>
+      <p>
+        Many paving contractors cut corners with minimal base preparation. We never do. Every J. Worden &amp; Sons
+        project begins with a 6-inch compacted stone structural base — the same engineering standard used in
+        municipal roadways and high-traffic commercial sites. This standard is applied across our 41-city Virginia
+        service grid, from Richmond metro to the Shenandoah Valley.
+      </p>
+      <div class="standard-badge">
+        <span class="standard-num">6″</span>
+        <span>Compacted aggregate stone base on every project — no shortcuts, no exceptions.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AWARDS ────────────────────────────────────────────────── -->
+<section id="awards" class="section" aria-labelledby="awards-heading">
+  <div class="container">
+    <span class="section-tag">Recognition</span>
+    <h2 class="section-title" id="awards-heading">4-Time Best of Houzz Award Winner</h2>
+    <p class="section-lead">
+      The Best of Houzz award is voted by a community of millions of homeowners — a true peer recognition
+      of quality, professionalism, and client satisfaction.
+    </p>
+    <div class="awards-grid">
+      <div class="award-card" *ngFor="let award of awards">
+        <div class="award-icon">🏆</div>
+        <strong>{{ award.year }}</strong>
+        <p>{{ award.label }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PORTFOLIO ──────────────────────────────────────────────── -->
+<section id="portfolio" class="section section-dark" aria-labelledby="portfolio-heading">
+  <div class="container">
+    <span class="section-tag">Project Highlights</span>
+    <h2 class="section-title" id="portfolio-heading">Recent Completed Projects</h2>
+    <p class="section-lead">
+      Browse a selection of our commercial and residential work across the Richmond metro area.
+    </p>
+    <div class="filter-bar" role="group" aria-label="Filter projects by type">
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter === f"
+        *ngFor="let f of filters"
+        (click)="setFilter(f)">{{ f | titlecase }}</button>
+    </div>
+    <div class="projects-grid">
+      <article
+        class="project-card"
+        *ngFor="let proj of filteredProjects">
+        <div class="project-img">
+          <span class="placeholder-icon">{{ proj.icon }}</span>
+          <span class="project-badge">{{ proj.category | titlecase }}</span>
+        </div>
+        <div class="project-body">
+          <h3>{{ proj.title }}</h3>
+          <p>{{ proj.description }}</p>
+          <div class="project-meta">
+            <span>{{ proj.size }}</span>
+            <span>{{ proj.type }}</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="houzz-cta">
+      <p>📸 More photos coming soon. Visit our Houzz profile for the full gallery.</p>
+      <a href="https://www.houzz.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        🏆 Visit Our Houzz Profile
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────────────── -->
+<section id="contact" class="section" aria-labelledby="contact-heading">
+  <div class="container">
+    <span class="section-tag">Free &amp; No Obligation</span>
+    <h2 class="section-title" id="contact-heading">Request a Free Estimate</h2>
+    <p class="section-lead">
+      Ready to discuss your commercial or residential paving project? Contact us for a no-obligation estimate.
+      We serve all 41 cities in our Virginia grid and multi-state commercial clients.
+    </p>
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Get in <span class="gold">Touch</span></h3>
+        <div class="contact-method" *ngFor="let method of contactMethods">
+          <div class="contact-icon">{{ method.icon }}</div>
+          <div>
+            <h4>{{ method.label }}</h4>
+            <p><a [href]="method.href">{{ method.value }}</a></p>
+            <p class="contact-note" *ngIf="method.note">{{ method.note }}</p>
+          </div>
+        </div>
+        <div class="service-area">
+          <h4>Service Area</h4>
+          <ul>
+            <li *ngFor="let area of serviceAreas">📍 {{ area }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Estimate Form -->
+      <div class="estimate-form-wrap">
+        <h3>📋 Estimate <span class="gold">Request Form</span></h3>
+        <form name="estimate-form" data-netlify="true" data-netlify-honeypot="bot-field" (submit)="onSubmit($event)">
+          <input type="hidden" name="form-name" value="estimate-form" />
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name <span class="req">*</span></label>
+              <input type="text" id="fname" name="fname" placeholder="John" required autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name <span class="req">*</span></label>
+              <input type="text" id="lname" name="lname" placeholder="Smith" required autocomplete="family-name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(804) 446-1296" required autocomplete="tel" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="address">Project Address / City <span class="req">*</span></label>
+            <input type="text" id="address" name="address" placeholder="e.g. 123 Main St, Chester, VA" required autocomplete="street-address" />
+          </div>
+          <div class="form-group">
+            <label for="service">Type of Service <span class="req">*</span></label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service…</option>
+              <option value="residential-driveway">Residential Driveway (New)</option>
+              <option value="driveway-resurface">Driveway Resurfacing / Overlay</option>
+              <option value="commercial-lot">Commercial Parking Lot</option>
+              <option value="sealcoating">Sealcoating</option>
+              <option value="repairs">Repairs &amp; Patching</option>
+              <option value="grading">Grading &amp; Base Prep</option>
+              <option value="hoa-road">HOA / Community Road</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="size">Approximate Project Size</label>
+            <select id="size" name="size">
+              <option value="" disabled selected>Select a range…</option>
+              <option value="small">Small — Single driveway</option>
+              <option value="medium">Medium — Multi-unit or small lot</option>
+              <option value="large">Large — Commercial lot or road</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Project Details &amp; Questions</label>
+            <textarea id="message" name="message" placeholder="Describe your project — square footage, existing surface condition, timeline, etc."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">📨 Submit Estimate Request</button>
+          <p class="form-note">We typically respond within one business day. Your info is never shared.</p>
+          <div class="success-msg" *ngIf="formSubmitted" role="alert">
+            ✅ <strong>Request received!</strong> We'll be in touch within one business day.
+            For urgent needs, call <a href="tel:8044461296">804-446-1296</a>.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact / Estimate</a>
+  </div>
+  <p>
+    <strong class="gold">J. Worden &amp; Sons Asphalt Paving</strong> &mdash;
+    Richmond &amp; Chester, VA &mdash;
+    <a href="tel:8044461296">804-446-1296</a>
+  </p>
+  <p class="footer-copy">&copy; {{ currentYear }} J. Worden &amp; Sons. All rights reserved. Licensed &amp; Insured.</p>
+</footer>
+
