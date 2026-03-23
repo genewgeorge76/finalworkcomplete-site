@@ -101,10 +101,12 @@ export class AppComponent {
     if (!valid) return;
 
     const formData = new FormData(form);
+    const params = new URLSearchParams();
+    formData.forEach((value, key) => { params.append(key, value.toString()); });
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData as unknown as Record<string, string>).toString()
+      body: params.toString()
     })
       .then(() => {
         this.formSubmitted = true;

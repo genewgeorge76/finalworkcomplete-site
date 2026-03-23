@@ -16,8 +16,8 @@
 </header>
 
 <!-- ── DISCLAIMER BANNER ────────────────────────────────────── -->
-<div class="disclaimer-banner">
-  ⚠&nbsp; We are J. Worden &amp; Sons Asphalt Paving — the original, 4th-generation family business.
+<div class="disclaimer-banner" role="note">
+  <span aria-hidden="true">⚠</span>&nbsp; We are J. Worden &amp; Sons Asphalt Paving — the original, 4th-generation family business.
   <strong>Independent from all other Worden-named paving entities in Chester, VA.</strong>
 </div>
 
@@ -151,8 +151,7 @@
     <div class="projects-grid">
       <article
         class="project-card"
-        *ngFor="let proj of filteredProjects"
-        [class.hidden]="false">
+        *ngFor="let proj of filteredProjects">
         <div class="project-img">
           <span class="placeholder-icon">{{ proj.icon }}</span>
           <span class="project-badge">{{ proj.category | titlecase }}</span>
@@ -208,7 +207,7 @@
       <!-- Estimate Form -->
       <div class="estimate-form-wrap">
         <h3>📋 Estimate <span class="gold">Request Form</span></h3>
-        <form name="estimate-form" data-netlify="true" data-netlify-honeypot="bot-field" (submit)="onSubmit($event)" novalidate>
+        <form name="estimate-form" data-netlify="true" data-netlify-honeypot="bot-field" (submit)="onSubmit($event)">
           <input type="hidden" name="form-name" value="estimate-form" />
           <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
           <div class="form-row">
